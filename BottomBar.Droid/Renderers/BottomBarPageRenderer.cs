@@ -175,8 +175,6 @@ namespace BottomBar.Droid.Renderers
 
 		protected override void OnLayout (bool changed, int l, int t, int r, int b)
 		{
-			base.OnLayout (changed, l, t, r, b);
-			
 			int width = r - l;
 			int height = b - t;
 
@@ -208,6 +206,8 @@ namespace BottomBar.Droid.Renderers
 				_bottomBar.Measure (MeasureSpecFactory.MakeMeasureSpec (width, MeasureSpecMode.Exactly), MeasureSpecFactory.MakeMeasureSpec (tabsHeight, MeasureSpecMode.Exactly));
 				_bottomBar.Layout (0, 0, width, tabsHeight);
 			}
+
+			base.OnLayout (changed, l, t, r, b);
 		}
 
 		void UpdateBarBackgroundColor ()
